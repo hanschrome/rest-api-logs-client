@@ -82,7 +82,7 @@ abstract class AbstractRestApiLogsClient implements RestApiLogsClient
          */
         $httpPrefix = $this->getRestApiLogsConfiguration()->isSsl() ? 'https' : 'http';
 
-        $url = $httpPrefix .
+        $url = $httpPrefix . '://' .
             $this->getRestApiLogsConfiguration()->getDomain() .
             $this->getRestApiLogsConfiguration()->getPath() .
             'generic';
