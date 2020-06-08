@@ -12,6 +12,35 @@ use DateTime;
 interface Log
 {
     /**
+     * Information that is diagnostically helpful to people more than just developers (IT, sysadmins, etc.).
+     */
+    const DEBUG_LEVEL = 0;
+    /**
+     * Anything that can potentially cause application oddities, but for which I am automatically recovering.
+     * (Such as switching from a primary to backup server, retrying an operation, missing secondary data, etc.)
+     */
+    const WARN_LEVEL = 1;
+    /**
+     * Any error which is fatal to the operation, but not the service or application
+     * (can't open a required file, missing data, etc.).
+     */
+    const ERROR_LEVEL = 2;
+    /**
+     * Any error which is fatal to the operation, but not the service or application
+     * (can't open a required file, missing data, etc.).
+     * These errors will force user (administrator, or direct user) intervention.
+     */
+    const FATAL_LEVEL = 3;
+    /**
+     * Any error that is forcing a shutdown of the service or application to prevent data loss (or further data loss).
+     */
+    const CRITICAL_LEVEL = 4;
+    /**
+     * Information that is diagnostically helpful to just developers
+     */
+    const TRACE_LEVEL = 5;
+
+    /**
      * @param DateTime $dateTime
      */
     public function setCreated(DateTime $dateTime): void;
