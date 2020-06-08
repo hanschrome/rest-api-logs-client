@@ -3,6 +3,8 @@
 
 namespace RestApiLogsClient\Common\Client;
 
+use RestApiLogsClient\Common\Configuration\RestApiLogsConfiguration;
+
 /**
  * Class RestApiLogsClientFactory
  * @package RestApiLogsClient\Common\Client

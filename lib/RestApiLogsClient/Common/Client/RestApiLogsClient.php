@@ -3,6 +3,7 @@
 
 namespace RestApiLogsClient\Common\Client;
 
+use RestApiLogsClient\Common\Configuration\RestApiLogsConfiguration;
 use RestApiLogsClient\Common\Log\Log;
 
 /**
