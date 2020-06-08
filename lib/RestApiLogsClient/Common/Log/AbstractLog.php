@@ -10,13 +10,93 @@ namespace RestApiLogsClient\Common\Log;
  */
 abstract class AbstractLog implements Log
 {
+    /**
+     * @var \DateTime
+     */
+    private \DateTime $created;
+    /**
+     * @var string
+     */
+    private string $application;
+    /**
+     * @var int
+     */
+    private int $level;
+    /**
+     * @var string
+     */
+    private string $environment;
+    /**
+     * @var string
+     */
+    private string $scope;
+    /**
+     * @var string
+     */
+    private string $filename;
+    /**
+     * @var int
+     */
+    private int $line;
+    /**
+     * @var mixed|null
+     */
+    private $debugBackTrace;
+    /**
+     * @var mixed|null
+     */
+    private $session;
+    /**
+     * @var mixed|null
+     */
+    private $client;
+    /**
+     * @var string
+     */
+    private string $exception;
+    /**
+     * @var string
+     */
+    private string $error;
+    /**
+     * @var string
+     */
+    private string $message;
+    /**
+     * @var mixed|null
+     */
+    private $vars;
+    /**
+     * @var mixed|null
+     */
+    private $eventTrace;
+    /**
+     * @var mixed|null
+     */
+    private $observations;
 
     /**
-     * @param \DateTime $dateTime
+     * @return \DateTime
      */
-    public function setCreated(\DateTime $dateTime): void
+    public function getCreated(): \DateTime
     {
-        // TODO: Implement setCreated() method.
+        return $this->created;
+    }
+
+    /**
+     * @param \DateTime $created
+     */
+    public function setCreated(\DateTime $created): void
+    {
+        $this->created = $created;
+    }
+
+    /**
+     * @return string
+     */
+    public function getApplication(): string
+    {
+        return $this->application;
     }
 
     /**
@@ -24,7 +104,15 @@ abstract class AbstractLog implements Log
      */
     public function setApplication(string $application): void
     {
-        // TODO: Implement setApplication() method.
+        $this->application = $application;
+    }
+
+    /**
+     * @return int
+     */
+    public function getLevel(): int
+    {
+        return $this->level;
     }
 
     /**
@@ -32,7 +120,15 @@ abstract class AbstractLog implements Log
      */
     public function setLevel(int $level): void
     {
-        // TODO: Implement setLevel() method.
+        $this->level = $level;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEnvironment(): string
+    {
+        return $this->environment;
     }
 
     /**
@@ -40,7 +136,15 @@ abstract class AbstractLog implements Log
      */
     public function setEnvironment(string $environment): void
     {
-        // TODO: Implement setEnvironment() method.
+        $this->environment = $environment;
+    }
+
+    /**
+     * @return string
+     */
+    public function getScope(): string
+    {
+        return $this->scope;
     }
 
     /**
@@ -48,7 +152,15 @@ abstract class AbstractLog implements Log
      */
     public function setScope(string $scope): void
     {
-        // TODO: Implement setScope() method.
+        $this->scope = $scope;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFilename(): string
+    {
+        return $this->filename;
     }
 
     /**
@@ -56,7 +168,15 @@ abstract class AbstractLog implements Log
      */
     public function setFilename(string $filename): void
     {
-        // TODO: Implement setFilename() method.
+        $this->filename = $filename;
+    }
+
+    /**
+     * @return int
+     */
+    public function getLine(): int
+    {
+        return $this->line;
     }
 
     /**
@@ -64,135 +184,7 @@ abstract class AbstractLog implements Log
      */
     public function setLine(int $line): void
     {
-        // TODO: Implement setLine() method.
-    }
-
-    /**
-     * @param $debugBackTrace
-     */
-    public function setDebugBackTrace($debugBackTrace): void
-    {
-        // TODO: Implement setDebugBackTrace() method.
-    }
-
-    /**
-     * @param $session
-     */
-    public function setSession($session): void
-    {
-        // TODO: Implement setSession() method.
-    }
-
-    /**
-     * @param $client
-     */
-    public function setClient($client): void
-    {
-        // TODO: Implement setClient() method.
-    }
-
-    /**
-     * @param $exception
-     */
-    public function setException($exception): void
-    {
-        // TODO: Implement setException() method.
-    }
-
-    /**
-     * @param $vars
-     */
-    public function setVars($vars): void
-    {
-        // TODO: Implement setVars() method.
-    }
-
-    /**
-     * @param $eventTrace
-     */
-    public function setEventTrace($eventTrace): void
-    {
-        // TODO: Implement setEventTrace() method.
-    }
-
-    /**
-     * @param $observations
-     */
-    public function setObservations($observations): void
-    {
-        // TODO: Implement setObservations() method.
-    }
-
-    /**
-     * @return \DateTime|null
-     */
-    public function getCreated(): ?\DateTime
-    {
-        // TODO: Implement getCreated() method.
-        return null;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getApplication(): ?string
-    {
-        // TODO: Implement getApplication() method.
-        return null;
-    }
-
-    /**
-     * @return int|null
-     */
-    public function getLevel(): ?int
-    {
-        // TODO: Implement getLevel() method.
-        return null;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getEnvironment(): ?string
-    {
-        // TODO: Implement getEnvironment() method.
-        return null;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getScope(): ?string
-    {
-        // TODO: Implement getScope() method.
-        return null;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getFilename(): ?string
-    {
-        // TODO: Implement getFilename() method.
-        return null;
-    }
-
-    /**
-     * @return int|null
-     */
-    public function getLine(): ?int
-    {
-        // TODO: Implement getLine() method.
-        return null;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getDebugBackTrace()
-    {
-        // TODO: Implement getDebugBackTrace() method.
-        return null;
+        $this->line = $line;
     }
 
     /**
@@ -200,8 +192,31 @@ abstract class AbstractLog implements Log
      */
     public function getSession()
     {
-        // TODO: Implement getSession() method.
-        return null;
+        return $this->session;
+    }
+
+    /**
+     * @param mixed $session
+     */
+    public function setSession($session): void
+    {
+        $this->session = $session;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDebugBackTrace()
+    {
+        return $this->debugBackTrace;
+    }
+
+    /**
+     * @param mixed $debugBackTrace
+     */
+    public function setDebugBackTrace($debugBackTrace): void
+    {
+        $this->debugBackTrace = $debugBackTrace;
     }
 
     /**
@@ -209,17 +224,63 @@ abstract class AbstractLog implements Log
      */
     public function getClient()
     {
-        // TODO: Implement getClient() method.
-        return null;
+        return $this->client;
     }
 
     /**
-     * @return mixed
+     * @param mixed $client
      */
-    public function getException()
+    public function setClient($client): void
     {
-        // TODO: Implement getException() method.
-        return null;
+        $this->client = $client;
+    }
+
+    /**
+     * @return string
+     */
+    public function getException(): string
+    {
+        return $this->exception;
+    }
+
+    /**
+     * @param string $exception
+     */
+    public function setException(string $exception): void
+    {
+        $this->exception = $exception;
+    }
+
+    /**
+     * @return string
+     */
+    public function getError(): string
+    {
+        return $this->error;
+    }
+
+    /**
+     * @param string $error
+     */
+    public function setError(string $error): void
+    {
+        $this->error = $error;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMessage(): string
+    {
+        return $this->message;
+    }
+
+    /**
+     * @param string $message
+     */
+    public function setMessage(string $message): void
+    {
+        $this->message = $message;
     }
 
     /**
@@ -227,8 +288,15 @@ abstract class AbstractLog implements Log
      */
     public function getVars()
     {
-        // TODO: Implement getVars() method.
-        return null;
+        return $this->vars;
+    }
+
+    /**
+     * @param mixed $vars
+     */
+    public function setVars($vars): void
+    {
+        $this->vars = $vars;
     }
 
     /**
@@ -236,8 +304,15 @@ abstract class AbstractLog implements Log
      */
     public function getEventTrace()
     {
-        // TODO: Implement getEventTrace() method.
-        return null;
+        return $this->eventTrace;
+    }
+
+    /**
+     * @param mixed $eventTrace
+     */
+    public function setEventTrace($eventTrace): void
+    {
+        $this->eventTrace = $eventTrace;
     }
 
     /**
@@ -245,7 +320,14 @@ abstract class AbstractLog implements Log
      */
     public function getObservations()
     {
-        // TODO: Implement getObservations() method.
-        return null;
+        return $this->observations;
+    }
+
+    /**
+     * @param mixed $observations
+     */
+    public function setObservations($observations): void
+    {
+        $this->observations = $observations;
     }
 }
