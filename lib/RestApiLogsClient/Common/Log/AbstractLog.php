@@ -330,4 +330,12 @@ abstract class AbstractLog implements Log
     {
         $this->observations = $observations;
     }
+
+    /**
+     * @return array
+     */
+    public function toArray(): array
+    {
+        return (array) $this;
+    }
 }

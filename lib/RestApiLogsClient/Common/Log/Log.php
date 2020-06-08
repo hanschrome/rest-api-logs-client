@@ -179,4 +179,9 @@ interface Log
      * @return mixed
      */
     public function getObservations();
+
+    /**
+     * @return array
+     */
+    public function toArray(): array;
 }

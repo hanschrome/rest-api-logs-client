@@ -36,7 +36,32 @@ abstract class AbstractRestApiLogsClient implements RestApiLogsClient
      */
     public function log(Log $log): bool
     {
-        // TODO: Implement log() method.
+        /**
+         * Validate configuration
+         */
+        if (is_null($this->restApiLogsConfiguration)) {
+            /**
+             * @todo implement exception
+             */
+            throw new \Exception("");
+        }
+
+        /**
+         * Serialize log
+         */
+        $data = $log->toArray();
+
+        /**
+         * Http Request
+         */
+        return $this->logByHttp($data);
+    }
+
+    /**
+     * @param array $data
+     * @return bool
+     */
+    private function logByHttp(array $data): bool {
         return true;
     }
 }
