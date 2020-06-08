@@ -10,15 +10,47 @@ namespace RestApiLogsClient\Common\Client;
 class RestApiLogsClientFactory
 {
     public const DEFAULT_CONFIGURATION = 0;
-    private static $configurations = [];
+    /**
+     * @var RestApiLogsConfiguration[]
+     */
+    private static array $configurations = [];
 
     /**
+     * Generate RestApiLogsClient with a configuration
+     *
      * @param int $configurationIndex
+     * @param RestApiLogsClient $restApiLogsClient
      * @return RestApiLogsClient|null
+     * @throws \Exception
      */
-    public static function get($configurationIndex = self::DEFAULT_CONFIGURATION): ?RestApiLogsClient
+    public static function get($configurationIndex = self::DEFAULT_CONFIGURATION, RestApiLogsClient $restApiLogsClient = null): ?RestApiLogsClient
     {
-        return null;
+        /**
+         * Validate configuration index exists
+         */
+        if(!array_key_exists($configurationIndex, self::$configurations)) {
+            /**
+             * @todo implement custom exceptions
+             */
+            throw new \Exception("");
+        }
+
+        /**
+         * Use SimpleRestApiLogsClient as default RestApiLogsClient implementation
+         */
+        if(is_null($restApiLogsClient)) {
+            $restApiLogsClient = new SimpleRestApiLogsClient();
+        }
+
+        /**
+         * Set configuration to RestApiLogsClient instance
+         */
+        $restApiLogsClient->setRestApiLogsConfiguration(self::$configurations[$configurationIndex]);
+
+        /**
+         * Return configured RestApiLogsClient
+         */
+        return $restApiLogsClient;
     }
 
     /**
@@ -30,10 +62,10 @@ class RestApiLogsClientFactory
     }
 
     /**
-     * @param array $configurations
+     * @param RestApiLogsConfiguration $restApiLogsConfiguration
      */
-    public static function setConfigurations(array $configurations): void
+    public static function addConfiguration(RestApiLogsConfiguration $restApiLogsConfiguration): void
     {
-        self::$configurations = $configurations;
+        self::$configurations[] = $restApiLogsConfiguration;
     }
 }

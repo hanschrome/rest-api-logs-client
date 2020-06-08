@@ -16,4 +16,14 @@ interface RestApiLogsClient
      * @return bool
      */
     public function log(Log $log): bool;
+
+    /**
+     * @param RestApiLogsConfiguration $restApiLogsConfiguration
+     */
+    public function setRestApiLogsConfiguration(RestApiLogsConfiguration $restApiLogsConfiguration): void;
+
+    /**
+     * @return RestApiLogsConfiguration
+     */
+    public function getRestApiLogsConfiguration(): RestApiLogsConfiguration;
 }
