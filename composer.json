@@ -1,0 +1,32 @@
+{
+  "name": "hanschrome/rest-api-logs-client",
+  "type": "library",
+  "description": "PHP library that adds a Client to connect with hanschrome/rest-api-logs.",
+  "keywords": [
+    "php",
+    "logs",
+    "http",
+    "https",
+    "client",
+    "logger"
+  ],
+  "homepage": "https://github.com/hanschrome/rest-api-logs-client",
+  "license": "MIT",
+  "authors": [
+    {"name": "Hans Castro", "email": "hanscastroadmn@gmail.com"}
+  ],
+  "require": {
+    "php": "^7.1.3 || ^8.0"
+  },
+  "require-dev": {
+  },
+  "autoload": {
+    "psr-4": {
+      "RestApiLogsClient\\Common\\Client\\": "lib/RestApiLogsClient/Common/Client",
+      "RestApiLogsClient\\Common\\Log\\": "lib/RestApiLogsClient/Common/Log"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {}
+  }
+}
