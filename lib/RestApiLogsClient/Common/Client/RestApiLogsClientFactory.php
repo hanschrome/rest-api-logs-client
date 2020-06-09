@@ -4,6 +4,7 @@
 namespace RestApiLogsClient\Common\Client;
 
 use RestApiLogsClient\Common\Configuration\RestApiLogsConfiguration;
+use RestApiLogsClient\Common\Exception\MissingConfigurationRestApiLogsException;
 
 /**
  * Class RestApiLogsClientFactory
@@ -25,16 +26,13 @@ class RestApiLogsClientFactory
      * @return RestApiLogsClient|null
      * @throws \Exception
      */
-    public static function get($configurationIndex = self::DEFAULT_CONFIGURATION, RestApiLogsClient $restApiLogsClient = null): ?RestApiLogsClient
+    public static function get(int $configurationIndex = self::DEFAULT_CONFIGURATION, RestApiLogsClient $restApiLogsClient = null): ?RestApiLogsClient
     {
         /**
          * Validate configuration index exists
          */
         if(!array_key_exists($configurationIndex, self::$configurations)) {
-            /**
-             * @todo implement custom exceptions
-             */
-            throw new \Exception("");
+            throw new MissingConfigurationRestApiLogsException("The configuration with id (" . $configurationIndex . ") does not exist");
         }
 
         /**
