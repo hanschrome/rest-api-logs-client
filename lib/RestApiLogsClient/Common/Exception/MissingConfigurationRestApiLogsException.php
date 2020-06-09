@@ -3,10 +3,11 @@
 
 namespace RestApiLogsClient\Common\Exception;
 
-
-use RestApiLogsClient\Common\Configuration\AbstractRestApiLogsConfiguration;
-
-class MissingConfigurationRestApiLogsException extends AbstractRestApiLogsConfiguration
+/**
+ * Class MissingConfigurationRestApiLogsException
+ * @package RestApiLogsClient\Common\Exception
+ */
+class MissingConfigurationRestApiLogsException extends AbstractRestApiLogsException
 {
 
 }

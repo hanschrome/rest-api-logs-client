@@ -4,6 +4,7 @@
 namespace RestApiLogsClient\Common\Client;
 
 use RestApiLogsClient\Common\Configuration\RestApiLogsConfiguration;
+use RestApiLogsClient\Common\Exception\MissingConfigurationRestApiLogsException;
 use RestApiLogsClient\Common\Log\Log;
 
 /**
@@ -33,6 +34,7 @@ abstract class AbstractRestApiLogsClient implements RestApiLogsClient
     /**
      * @param Log $log
      * @return bool
+     * @throws MissingConfigurationRestApiLogsException
      */
     public function log(Log $log): bool
     {
@@ -40,10 +42,7 @@ abstract class AbstractRestApiLogsClient implements RestApiLogsClient
          * Validate configuration
          */
         if (is_null($this->restApiLogsConfiguration)) {
-            /**
-             * @todo implement exception
-             */
-            throw new \Exception("");
+            throw new MissingConfigurationRestApiLogsException("It is needed to be added a configuration to send a Log");
         }
 
         /**
