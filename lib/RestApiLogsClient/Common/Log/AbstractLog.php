@@ -51,9 +51,9 @@ abstract class AbstractLog implements Log
      */
     private $client;
     /**
-     * @var string
+     * @var mixed
      */
-    private string $exception;
+    private $exception;
     /**
      * @var string
      */
@@ -238,15 +238,15 @@ abstract class AbstractLog implements Log
     /**
      * @return string
      */
-    public function getException(): string
+    public function getException()
     {
         return $this->exception;
     }
 
     /**
-     * @param string $exception
+     * @param $exception
      */
-    public function setException(string $exception): void
+    public function setException($exception): void
     {
         $this->exception = $exception;
     }
