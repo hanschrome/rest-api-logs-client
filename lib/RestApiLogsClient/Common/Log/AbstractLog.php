@@ -336,6 +336,22 @@ abstract class AbstractLog implements Log
      */
     public function toArray(): array
     {
-        return (array) $this;
+        return [
+            'application' => $this->getApplication(),
+            'level' => $this->getLevel(),
+            'environment' => $this->getEnvironment(),
+            'scope' => $this->getScope(),
+            'filename' => $this->getFilename(),
+            'line' => $this->getLine(),
+            'debugBackTrace' => $this->getDebugBackTrace(),
+            'session' => $this->getSession(),
+            'client' => $this->getClient(),
+            'exception' => $this->getException(),
+            'error' => $this->getError(),
+            'message' => $this->getMessage(),
+            'vars' => $this->getVars(),
+            'eventTrace' => $this->getEventTrace(),
+            'observations' => $this->getObservations()
+        ];
     }
 }
