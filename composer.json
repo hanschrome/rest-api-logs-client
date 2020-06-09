@@ -25,6 +25,8 @@
   "autoload": {
     "psr-4": {
       "RestApiLogsClient\\Common\\Client\\": "lib/RestApiLogsClient/Common/Client",
+      "RestApiLogsClient\\Common\\Configuration\\": "lib/RestApiLogsClient/Common/Configuration",
+      "RestApiLogsClient\\Common\\Exception\\": "lib/RestApiLogsClient/Common/Exception",
       "RestApiLogsClient\\Common\\Log\\": "lib/RestApiLogsClient/Common/Log"
     }
   },
