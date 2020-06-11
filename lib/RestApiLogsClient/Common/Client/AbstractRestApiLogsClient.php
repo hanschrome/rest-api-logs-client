@@ -13,7 +13,10 @@ use RestApiLogsClient\Common\Log\Log;
  */
 abstract class AbstractRestApiLogsClient implements RestApiLogsClient
 {
-    private RestApiLogsConfiguration $restApiLogsConfiguration;
+    /**
+     * @var RestApiLogsConfiguration
+     */
+    private $restApiLogsConfiguration;
 
     /**
      * @return RestApiLogsConfiguration

@@ -13,31 +13,31 @@ abstract class AbstractLog implements Log
     /**
      * @var \DateTime
      */
-    private \DateTime $created;
+    private $created;
     /**
      * @var string
      */
-    private string $application;
+    private $application;
     /**
      * @var int
      */
-    private int $level;
+    private $level;
     /**
      * @var string
      */
-    private string $environment;
+    private $environment;
     /**
      * @var string
      */
-    private string $scope;
+    private $scope;
     /**
      * @var string
      */
-    private string $filename;
+    private $filename;
     /**
      * @var int
      */
-    private int $line;
+    private $line;
     /**
      * @var mixed|null
      */

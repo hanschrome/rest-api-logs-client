@@ -12,15 +12,15 @@ abstract class AbstractRestApiLogsConfiguration implements RestApiLogsConfigurat
     /**
      * @var string
      */
-    private string $domain;
+    private $domain;
     /**
      * @var string
      */
-    private string $path = '/';
+    private $path = '/';
     /**
      * @var bool
      */
-    private bool $ssl = true;
+    private $ssl = true;
 
     /**
      * @return string
