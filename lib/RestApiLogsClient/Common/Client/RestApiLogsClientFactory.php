@@ -16,7 +16,7 @@ class RestApiLogsClientFactory
     /**
      * @var RestApiLogsConfiguration[]
      */
-    private static array $configurations = [];
+    private static $configurations = [];
 
     /**
      * Generate RestApiLogsClient with a configuration

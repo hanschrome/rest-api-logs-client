@@ -57,11 +57,11 @@ abstract class AbstractLog implements Log
     /**
      * @var string
      */
-    private string $error;
+    private $error;
     /**
      * @var string
      */
-    private string $message;
+    private $message;
     /**
      * @var mixed|null
      */
